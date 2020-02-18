@@ -32,9 +32,9 @@ class MusicPlayerController {
         }
     }
 
-    static presentPicker(webSaveToLocalStorage, successHandler, cancelHandler) {
+    static presentPicker(selectMultiple, successHandler, cancelHandler) {
         const player = NativeModules.RNReactNativeMusicplayercontroller
-        player.presentPicker((errorCode, metadata) => {
+        player.presentPicker(selectMultiple, (errorCode, metadata) => {
             if (errorCode == 0) {
                 // No Error. User picked
                 successHandler(metadata)
